@@ -1,6 +1,12 @@
+from django.shortcuts import render
 from rest_framework import viewsets
+
 from .models import SalePurchase, CashBankTransaction
 from .serializers import SalePurchaseSerializer, CashBankTransactionSerializer
+
+
+def company_home(request):
+    return render(request, "company_home.html")
 
 
 class SalePurchaseViewSet(viewsets.ModelViewSet):
