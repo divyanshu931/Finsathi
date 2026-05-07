@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finsathi | Modern Accounting Platform</title>
+    <link rel="stylesheet" href="{% static 'css/company_home.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container nav">
+            <h1 class="brand">Finsathi</h1>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#contact">Contact</a>
+                <a class="btn btn-outline" href="/admin/">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <p class="tag">Accounting • Inventory • Cashflow</p>
+                <h2>Finance operations built for growing businesses.</h2>
+                <p class="subtitle">Finsathi helps teams manage purchases, sales, party ledgers, cash/bank transactions, and stock from one reliable system.</p>
+                <div class="actions">
+                    <a href="/admin/" class="btn">Get Started</a>
+                    <a href="/api/" class="btn btn-ghost">Explore API</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3>What you can run daily</h3>
+                <ul>
+                    <li>Record sales and purchases</li>
+                    <li>Track receivables and payables</li>
+                    <li>Maintain inventory in real time</li>
+                    <li>Generate ledger and statements</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section container">
+        <h3>Core Capabilities</h3>
+        <div class="grid">
+            <article><h4>Ledger Automation</h4><p>Running balances are updated automatically for every transaction.</p></article>
+            <article><h4>Inventory Control</h4><p>Stock quantities adjust with each sale and purchase entry.</p></article>
+            <article><h4>Cash & Bank</h4><p>Manage account-level cashflows across payment modes.</p></article>
+            <article><h4>Secure Admin</h4><p>Use Django Admin to manage data with role-based access.</p></article>
+        </div>
+    </section>
+
+    <section id="solutions" class="section section-dark">
+        <div class="container">
+            <h3>Built for professional finance workflows</h3>
+            <p>Whether you run a trading company, distribution business, or service enterprise, Finsathi gives your team a dependable accounting backbone.</p>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <p><strong>Finsathi</strong> — Streamline your accounting operations.</p>
+            <p>Contact: support@finsathi.com</p>
+        </div>
+    </footer>
+</body>
+</html>
