@@ -12,6 +12,6 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
-EXPOSE 8000
+EXPOSE 3000
 
-CMD ["sh", "-c", "python manage.py migrate && gunicorn accounting_project.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 2 --timeout 120"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn accounting_project.wsgi:application --bind 0.0.0.0:${PORT:-${APPWRITE_FUNCTION_PORT:-3000}} --workers 2 --timeout 120"]

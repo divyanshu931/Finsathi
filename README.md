@@ -88,7 +88,7 @@ This repository is now ready for container deployment on Appwrite using `gunicor
 
 Set these in your Appwrite site/service environment:
 
-- `PORT` = `8000` (or keep Appwrite default)
+- `PORT` = `3000` (recommended on Appwrite), or set `APPWRITE_FUNCTION_PORT` if provided by your runtime
 - `DJANGO_SECRET_KEY` = `<a strong random string>`
 - `DJANGO_DEBUG` = `False`
 - `DJANGO_ALLOWED_HOSTS` = `your-app-domain.com,.appwrite.global`
@@ -100,7 +100,7 @@ The Docker container will:
 1. install `requirements.txt`
 2. run `collectstatic`
 3. run `migrate`
-4. start gunicorn on `0.0.0.0:$PORT`
+4. start gunicorn on `0.0.0.0:${PORT:-${APPWRITE_FUNCTION_PORT:-3000}}`
 
 ---
 
