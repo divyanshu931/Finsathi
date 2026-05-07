@@ -26,9 +26,8 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-()y59fre@oryil@6z^&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = [host.strip() for host in os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',') if host.strip()]
-if not DEBUG and not ALLOWED_HOSTS:
-    raise ValueError('DJANGO_ALLOWED_HOSTS must be set when DEBUG is False')
+
+ALLOWED_HOSTS = [host.strip() for host in os.getenv('DJANGO_ALLOWED_HOSTS', '*').split(',') if host.strip()]
 
 CSRF_TRUSTED_ORIGINS = [
     origin.strip() for origin in os.getenv('DJANGO_CSRF_TRUSTED_ORIGINS', '').split(',') if origin.strip()
@@ -136,6 +135,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
