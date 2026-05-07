@@ -1,4 +1,3 @@
-
 # 📊  Accounting & Ledger Management System
 
 A fully functional Accounting & Ledger Management System built using **Django** with customized **Django Admin**, dynamic ledger calculations, and PDF export functionality.
@@ -33,38 +32,6 @@ This project demonstrates financial logic implementation, admin customization, a
 
 ---
 
-## 🧠 Core Concepts Implemented
-
-* Custom Django Admin Views
-* Financial Ledger Logic (Debit/Credit system)
-* Running Balance Calculation
-* Date Range Filtering
-* Django ORM Aggregation (`Sum`)
-* Custom Admin URLs
-* PDF Report Generation
-* Template Overriding in Django Admin
-
----
-
-## 📂 Project Structure
-
-```
-accounting_project/
-│
-├── accounting_app/
-│   ├── models.py
-│   ├── admin.py
-│   ├── views.py
-│   ├── templates/
-│   │    └── admin/
-│   │         └── ledger.html
-│
-├── manage.py
-└── requirements.txt
-```
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone Repository
@@ -90,7 +57,6 @@ pip install -r requirements.txt
 ### 4️⃣ Apply Migrations
 
 ```bash
-python manage.py makemigrations
 python manage.py migrate
 ```
 
@@ -114,14 +80,27 @@ http://127.0.0.1:8000/admin/
 
 ---
 
-## 📊 Ledger Calculation Logic
+## 🚀 Deploy on Appwrite (Cloud Run)
 
-* Each Party has an Opening Balance.
-* Debit → Increases Balance.
-* Credit → Decreases Balance.
-* Running Balance calculated dynamically.
-* Date filtering recalculates opening before selected range.
-* Closing Balance derived from transaction history.
+This repository is now ready for container deployment on Appwrite using `gunicorn` and environment-based Django settings.
+
+### Required Environment Variables
+
+Set these in your Appwrite site/service environment:
+
+- `PORT` = `8000` (or keep Appwrite default)
+- `DJANGO_SECRET_KEY` = `<a strong random string>`
+- `DJANGO_DEBUG` = `False`
+- `DJANGO_ALLOWED_HOSTS` = `your-app-domain.com,.appwrite.global`
+- `DJANGO_CSRF_TRUSTED_ORIGINS` = `https://your-app-domain.com,https://<your-appwrite-domain>`
+
+### Build / Run behavior
+
+The Docker container will:
+1. install `requirements.txt`
+2. run `collectstatic`
+3. run `migrate`
+4. start gunicorn on `0.0.0.0:$PORT`
 
 ---
 
@@ -137,23 +116,7 @@ The system generates structured ledger statements including:
 
 ---
 
-## 📌 Future Enhancements
-
-* Role-Based Access Control (RBAC)
-* GST / Tax Module
-* Invoice Management
-* Excel Export
-* Dashboard Analytics
-* Multi-Company Support
-* REST API Integration
-
----
-
 ## 👨‍💻 Author
 
-**Divyanshu Tomar**
+**Divyanshu Tomar**  
 Backend Developer | Django | REST APIs | System Design
-Ongoing 
-
----
-

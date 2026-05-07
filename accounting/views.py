@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework import viewsets
 
@@ -17,3 +18,7 @@ class SalePurchaseViewSet(viewsets.ModelViewSet):
 class CashBankTransactionViewSet(viewsets.ModelViewSet):
     queryset = CashBankTransaction.objects.all()
     serializer_class = CashBankTransactionSerializer
+
+
+def health_check(request):
+    return HttpResponse("ok", content_type="text/plain")
