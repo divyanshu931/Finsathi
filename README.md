@@ -5,7 +5,6 @@ A fully functional Accounting & Ledger Management System built using **Django** 
 This project demonstrates financial logic implementation, admin customization, and backend architecture design.
 
 ---
-
 ## ✨ Features
 
 * 👤 Party Management (Customers / Vendors)
